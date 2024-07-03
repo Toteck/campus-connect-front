@@ -8,6 +8,10 @@ module.exports = {
     extend: {
       colors,
       fontFamily,
+      boxShadow: {
+        card: "0 4px 6px rgba(0, 0, 0, 0.1)", // Sombra leve
+        "card-lg": "0 10px 15px rgba(0, 0, 0, 0.1)", // Sombra mais intensa
+      },
     },
   },
   plugins: [],

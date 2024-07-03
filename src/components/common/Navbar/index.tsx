@@ -1,14 +1,9 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { PropsStack } from "@/routes";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-const home = require("../../../../assets/icons/main.png");
-const categories = require("../../../../assets/icons/categories.png");
-const search = require("../../../../assets/icons/search-navbar.png");
-const myEvents = require("../../../../assets/icons/my-events.png");
-const person = require("../../../../assets/icons/person.png");
 const Navbar = () => {
   const navigation = useNavigation<PropsStack>();
 
