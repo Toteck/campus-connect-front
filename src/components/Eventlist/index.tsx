@@ -1,4 +1,12 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  ListRenderItem,
+  FlatList,
+  Alert,
+} from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
@@ -11,7 +19,7 @@ interface EventType {
 
 const Data = [
   {
-    id: 1,
+    id: "1",
     title: "EDITAL PRPGI Nº 33/2023 - PIBITI ENSINO SUPERIOR",
     slug: "edital-prpgi-no-332023-pibiti-ensino-superior",
     description:
@@ -25,7 +33,7 @@ const Data = [
     updated_at: "2024-06-25T10:23:50.223-03:00",
   },
   {
-    id: 2,
+    id: "2",
     title: "Reunião de Pais e Mestres - Junho 2023",
     slug: "reuniao-de-pais-e-mestres-junho-2023",
     description:
@@ -39,7 +47,7 @@ const Data = [
     updated_at: "2024-06-25T10:23:50.238-03:00",
   },
   {
-    id: 3,
+    id: "3",
     title: "Aviso Importante sobre a Biblioteca",
     slug: "aviso-importante-sobre-a-biblioteca",
     description:
@@ -53,7 +61,7 @@ const Data = [
     updated_at: "2024-06-25T10:23:50.252-03:00",
   },
   {
-    id: 4,
+    id: "4",
     title: "Notícia: Nova Pesquisa Publicada",
     slug: "noticia-nova-pesquisa-publicada",
     description:
@@ -67,7 +75,7 @@ const Data = [
     updated_at: "2024-06-25T10:23:50.264-03:00",
   },
   {
-    id: 5,
+    id: "5",
     title: "Evento Cultural - Festa Junina",
     slug: "evento-cultural-festa-junina",
     description:
@@ -84,7 +92,13 @@ const Data = [
 
 const Eventlist = () => {
   const Item = ({ data }: { data: EventType }) => (
-    <TouchableOpacity className="h-[550px] justify-between  mx-7 bg-white rounded-2xl p-3 shadow-card border border-gray-300 ">
+    <TouchableOpacity
+      activeOpacity={0.85}
+      onPress={() => {
+        Alert.alert("Navegação para o evento!");
+      }}
+      className="h-[550px] justify-between  mx-7 bg-white rounded-2xl p-3 shadow-card border border-gray-300 "
+    >
       <View className=" w-full items-center rounded-md">
         <Image
           source={cover}
@@ -98,49 +112,35 @@ const Eventlist = () => {
       </TouchableOpacity>
 
       <View className="flex-row justify-between items-center ">
-        <Text className="text-xl font-heading">
-          EDITAL PRPGI Nº 33/2023 - PIBITI ENSINO SUPERIOR
-        </Text>
+        <Text className="text-xl font-heading">{data.title}</Text>
       </View>
       <View className="">
         <Text className="text-lg font-body" numberOfLines={3}>
-          Edital contendo as normas e procedimentos para as inscrições, seleção
-          e classificação dos candidatos ao Programa de Bolsas de Iniciação em
-          Desenvolvimento Tecnológico e Inovação do Ensino Superior (PIBITI
-          Ensino Superior), vigência 2023/2024.
+          {data.description}
         </Text>
       </View>
     </TouchableOpacity>
   );
 
+  const renderItem: ListRenderItem<EventType> = ({ item }) => (
+    <Item data={item} />
+  );
+
+  const ItemSeparator = () => (
+    <View style={{ height: 16 }} /> // Espaço entre os itens
+  );
+
   return (
-    <TouchableOpacity className="h-[550px] justify-between  mx-7 bg-white rounded-2xl p-3 shadow-card border border-gray-300 ">
-      <View className=" w-full items-center rounded-md">
-        <Image
-          source={cover}
-          resizeMode="cover"
-          className="w-full h-96 rounded-xl"
-        />
-      </View>
-
-      <TouchableOpacity>
-        <Ionicons name="heart-outline" size={32} color="green" />
-      </TouchableOpacity>
-
-      <View className="flex-row justify-between items-center ">
-        <Text className="text-xl font-heading">
-          EDITAL PRPGI Nº 33/2023 - PIBITI ENSINO SUPERIOR
-        </Text>
-      </View>
-      <View className="">
-        <Text className="text-lg font-body" numberOfLines={3}>
-          Edital contendo as normas e procedimentos para as inscrições, seleção
-          e classificação dos candidatos ao Programa de Bolsas de Iniciação em
-          Desenvolvimento Tecnológico e Inovação do Ensino Superior (PIBITI
-          Ensino Superior), vigência 2023/2024.
-        </Text>
-      </View>
-    </TouchableOpacity>
+    <FlatList
+      data={Data}
+      keyExtractor={(item: EventType) => item.id}
+      renderItem={renderItem}
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{
+        paddingBottom: 80,
+      }}
+      ItemSeparatorComponent={ItemSeparator}
+    />
   );
 };
 
