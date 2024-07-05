@@ -8,4 +8,5 @@ export const colors = {
   primaryButton: "#15803D",
   bgInputAbled: "#fff",
   secondaryButton: "#DC2626",
+  secondary: "#22c55e",
 };

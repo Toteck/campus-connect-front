@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, TouchableOpacityProps, StyleSheet } from "react-native";
 import React from "react";
 
 type props = {
@@ -21,7 +21,7 @@ const DefaultButton = ({
       }}
       activeOpacity={0.85}
       style={{ marginVertical: marginVertical }}
-      className={`w-full min-h-[40px] items-center justify-center mx-auto rounded ${
+      className={`w-[90%] min-h-[40px] items-center justify-center mx-auto rounded ${
         primaryButton ? "bg-primaryButton" : "bg-secondaryButton"
       }`}
     >
