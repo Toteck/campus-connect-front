@@ -10,7 +10,6 @@ import {
 import React from "react";
 import Constants from "expo-constants";
 import DefaultButton from "@/components/DefaultButton";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 import { PropsStack } from "../routes";
 
@@ -26,6 +25,7 @@ const Login = () => {
 
   const handleLogin = () => {
     Alert.alert("Botão de login");
+    navigation.navigate("Home")
   };
   
   return (

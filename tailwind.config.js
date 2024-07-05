@@ -3,7 +3,7 @@ import { fontFamily } from "./src/styles/font-family";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/components/**/*.{ts,tsx}", "./src/screens/**/**/*.{ts,tsx}"],
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors,

@@ -1,4 +1,4 @@
-import { View, TouchableOpacity, Image } from "react-native";
+import { TouchableOpacity } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { PropsStack } from "@/screens/routes";
@@ -18,7 +18,12 @@ const BackIcon = ({ marginLeft }: props) => {
         navigation.goBack();
       }}
     >
-      <Ionicons style={{marginLeft: marginLeft}} name="arrow-back" size={32} color="#15803D" />
+      <Ionicons
+        style={{ marginLeft: marginLeft }}
+        name="arrow-back"
+        size={32}
+        color="#15803D"
+      />
     </TouchableOpacity>
   );
 };
