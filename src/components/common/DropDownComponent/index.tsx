@@ -15,13 +15,14 @@ const Data = [
   },
 ];
 
-const DropDownComponent = ({ setSelected }: SelectListProps) => {
+const DropDownComponent = ({ setSelected, data, placeholder }: SelectListProps) => {
   return (
-    <View className="w-[90%] my-2.5 mx-auto">
+    <View className="w-5/6 mx-auto rounded-xl">
       <SelectList
-        placeholder="Selecione seu perfil"
-        data={Data}
-        boxStyles={{borderRadius: 5}}
+        placeholder={placeholder}
+        boxStyles={{ backgroundColor: "#fff" }}
+        dropdownStyles={{ backgroundColor: "#fff" }}
+        data={data}
         setSelected={setSelected}
         inputStyles={{ color: "#15803D" }}
         search={false}
