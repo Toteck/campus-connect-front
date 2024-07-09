@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import Routes from "./src/screens/routes";
+import Routes from "./src/routes";
 import "@/styles/global.css";
 import {
   useFonts,

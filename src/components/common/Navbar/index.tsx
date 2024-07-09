@@ -1,7 +1,7 @@
 import { View, TouchableOpacity } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { PropsStack } from "@/screens/routes";
+import { PropsStack } from "@/routes";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Navbar = () => {

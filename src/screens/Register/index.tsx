@@ -5,17 +5,17 @@ import Form from "@/components/Register/Form";
 import Constants from "expo-constants";
 import DefaultButton from "@/components/DefaultButton";
 import { useNavigation } from "@react-navigation/native";
-import { PropsStack } from "../routes";
+import { PropsStack } from "../../routes";
 
-const logo = require("../../../assets/images/horizontal-logo.png")
+const logo = require("../../../assets/images/horizontal-logo.png");
 
 const statusBarHeight = Constants.statusBarHeight + 20;
 
 const Register = () => {
-   const navigation = useNavigation<PropsStack>();
+  const navigation = useNavigation<PropsStack>();
   const handleRegister = () => {
-   Alert.alert("Registro feito com sucesso");
-  }
+    Alert.alert("Registro feito com sucesso");
+  };
   return (
     <ScrollView
       style={{ paddingTop: statusBarHeight }}

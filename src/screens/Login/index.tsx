@@ -11,23 +11,20 @@ import React from "react";
 import Constants from "expo-constants";
 import DefaultButton from "@/components/DefaultButton";
 import { useNavigation } from "@react-navigation/native";
-import { PropsStack } from "../routes";
+import { PropsStack } from "../../routes";
 
 const statusBarHeight = Constants.statusBarHeight;
 
 const logo = require("../../../assets/images/logo.png");
 
-
-
 const Login = () => {
-
-  const navigation = useNavigation<PropsStack>()
+  const navigation = useNavigation<PropsStack>();
 
   const handleLogin = () => {
     Alert.alert("Botão de login");
-    navigation.navigate("Home")
+    navigation.navigate("Home");
   };
-  
+
   return (
     <View
       style={{ paddingTop: statusBarHeight }}
@@ -79,13 +76,15 @@ const Login = () => {
           Esqueceu sua senha? Clique aqui!
         </Text>
         <View className="w-full flex justify-center items-center">
-          <Text className="text-lg font-subtitle mb-4">Ainda não tem conta?</Text>
+          <Text className="text-lg font-subtitle mb-4">
+            Ainda não tem conta?
+          </Text>
           <DefaultButton
             buttonText="Criar uma conta"
             primaryButton={true}
             marginVertical={0}
             buttonHandle={() => {
-              navigation.navigate("Register")
+              navigation.navigate("Register");
             }}
           />
         </View>

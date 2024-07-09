@@ -5,7 +5,8 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import Home from "@/screens/Home";
 import Login from "@/screens/Login";
 import Register from "@/screens/Register";
-import Search from "../Search";
+import Search from "../screens/Search";
+import Event from "@/screens/Event";
 
 //const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ type PropsNavigationStack = {
   Login: undefined;
   Register: undefined;
   Search: undefined;
+  Event: undefined;
 };
 
 const Stack = createNativeStackNavigator<PropsNavigationStack>();
@@ -31,6 +33,7 @@ const Routes = () => {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Search" component={Search} />
+        <Stack.Screen name="Event" component={Event} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,20 +1,23 @@
-import { View, Text, Image, TouchableOpacity, Alert } from 'react-native'
-import React from 'react'
-import { EventType } from '..'
+import { View, Text, Image, TouchableOpacity, Alert } from "react-native";
+import React from "react";
+import { EventType } from "..";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { useNavigation } from "@react-navigation/native";
+import { PropsStack } from "@/routes";
 
 interface DataProps {
-    data: EventType
+  data: EventType;
 }
 
 const cover = require("../../../../assets/images/app-icon.png");
 
-const EventCard = ({data}: DataProps) => {
+const EventCard = ({ data }: DataProps) => {
+  const navigation = useNavigation<PropsStack>();
   return (
     <TouchableOpacity
       activeOpacity={0.85}
       onPress={() => {
-        Alert.alert("Navegação para o evento!");
+        navigation.navigate("Event")
       }}
       className="h-[550px] justify-between  mx-7 bg-white rounded-2xl p-3 shadow-card border border-gray-300 "
     >
@@ -40,6 +43,6 @@ const EventCard = ({data}: DataProps) => {
       </View>
     </TouchableOpacity>
   );
-}
+};
 
-export default EventCard
+export default EventCard;
