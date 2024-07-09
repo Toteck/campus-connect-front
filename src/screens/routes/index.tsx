@@ -7,7 +7,7 @@ import Login from "@/screens/Login";
 import Register from "@/screens/Register";
 import Search from "../Search";
 
-const Stack = createNativeStackNavigator();
+//const Stack = createNativeStackNavigator();
 
 type PropsNavigationStack = {
   Home: undefined;
@@ -15,6 +15,8 @@ type PropsNavigationStack = {
   Register: undefined;
   Search: undefined;
 };
+
+const Stack = createNativeStackNavigator<PropsNavigationStack>();
 
 export type PropsStack = NativeStackNavigationProp<PropsNavigationStack>;
 

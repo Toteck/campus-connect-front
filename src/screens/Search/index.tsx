@@ -8,6 +8,7 @@ import DropDownComponent from "@/components/common/DropDownComponent";
 import DefaultButton from "@/components/DefaultButton";
 
 const Search = () => {
+  const [searchValue, setSearchValue] = useState("")
   const [select, setSelect] = useState("");
   const eventType = [
     { value: "Notícia" },
@@ -19,12 +20,13 @@ const Search = () => {
     { value: "Estudante" },
     { value: "Pais" },
   ];
+  console.log(searchValue)
   return (
     <View className="flex-1 bg-background w-full items-center">
       <Header />
       <View className="w-full h-2/5 justify-evenly items-center">
         <View className="flex-row w-5/6 justify-between items-center bg-white border p-2.5 rounded-xl">
-          <TextInput className="w-5/6" placeholder="Busque por um evento" />
+          <TextInput className="w-5/6" placeholder="Busque por um evento" onChangeText={(value) => setSearchValue(value)} />
           <Ionicons name="search" size={20} color="#15803D" />
         </View>
         <View className="w-full justify-between">

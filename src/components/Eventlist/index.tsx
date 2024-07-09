@@ -9,9 +9,10 @@ import {
 } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import EventCard from "./EventCard";
 
 const cover = require("../../../assets/images/app-icon.png");
-interface EventType {
+export interface EventType {
   id: string;
   title: string;
   description: string;
@@ -92,34 +93,7 @@ const Data = [
 
 const Eventlist = () => {
   const Item = ({ data }: { data: EventType }) => (
-    <TouchableOpacity
-      activeOpacity={0.85}
-      onPress={() => {
-        Alert.alert("Navegação para o evento!");
-      }}
-      className="h-[550px] justify-between  mx-7 bg-white rounded-2xl p-3 shadow-card border border-gray-300 "
-    >
-      <View className=" w-full items-center rounded-md">
-        <Image
-          source={cover}
-          resizeMode="cover"
-          className="w-full h-96 rounded-xl"
-        />
-      </View>
-
-      <TouchableOpacity>
-        <Ionicons name="heart-outline" size={32} color="green" />
-      </TouchableOpacity>
-
-      <View className="flex-row justify-between items-center ">
-        <Text className="text-xl font-heading">{data.title}</Text>
-      </View>
-      <View className="">
-        <Text className="text-lg font-body" numberOfLines={3}>
-          {data.description}
-        </Text>
-      </View>
-    </TouchableOpacity>
+    <EventCard data={data}/>
   );
 
   const renderItem: ListRenderItem<EventType> = ({ item }) => (
