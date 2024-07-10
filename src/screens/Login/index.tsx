@@ -6,6 +6,7 @@ import {
   Button,
   TouchableOpacity,
   Alert,
+  ScrollView,
 } from "react-native";
 import React from "react";
 import Constants from "expo-constants";
@@ -26,32 +27,35 @@ const Login = () => {
   };
 
   return (
-    <View
-      style={{ paddingTop: statusBarHeight }}
-      className="flex-1 bg-background items-center border border-red border-solid"
+    <ScrollView
+      style={{ paddingTop: statusBarHeight, paddingBottom: 40 }}
+      contentContainerStyle={{ alignItems: "center", paddingBottom: 80 }}
+      className="flex-1 bg-background"
     >
       <Image
         resizeMode="contain"
         source={logo}
         className="w-56 h-56 my-0 mx-auto"
       />
-      <View className="w-full max-w-[90%] justify-center items-center">
+      <View className=" w-full max-w-[90%] justify-around items-center">
         <Text className="mb-10 font-subtitle text-xl text-center">
           Faça login para não perder nenhum evento no campus IFMA Timon/MA
         </Text>
 
-        <View className="w-full">
+        <View className="w-full ">
           <Text className="mb-2">Email</Text>
           <TextInput
-            className="form-input mb-10"
+            className="form-input mb-10 rounded-xl"
             placeholder="Email"
             placeholderTextColor={"gray"}
+            keyboardType="email-address"
+            
           />
         </View>
-        <View className="w-full">
+        <View className="w-full ">
           <Text className="mb-2">Senha</Text>
           <TextInput
-            className="form-input"
+            className="form-input rounded-xl"
             placeholder="Senha"
             placeholderTextColor={"gray"}
             secureTextEntry={true}
@@ -61,20 +65,21 @@ const Login = () => {
         <DefaultButton
           buttonText="Fazer login"
           primaryButton={true}
-          marginVertical={40}
+          marginVertical={30}
           buttonHandle={() => {
             handleLogin();
           }}
         />
-
-        <Text
-          onPress={() => {
-            Alert.alert("Vai para tela de esqueceu senha!");
-          }}
-          className="text-lg font-subtitle mb-10"
-        >
-          Esqueceu sua senha? Clique aqui!
-        </Text>
+        <View className="">
+          <Text
+            onPress={() => {
+              Alert.alert("Vai para tela de esqueceu senha!");
+            }}
+            className="text-lg font-subtitle mb-4"
+          >
+            Esqueceu sua senha? Clique aqui!
+          </Text>
+        </View>
         <View className="w-full flex justify-center items-center">
           <Text className="text-lg font-subtitle mb-4">
             Ainda não tem conta?
@@ -89,7 +94,7 @@ const Login = () => {
           />
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
