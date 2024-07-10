@@ -35,7 +35,7 @@ const Login = () => {
         source={logo}
         className="w-56 h-56 my-0 mx-auto"
       />
-      <View className="w-full max-w-sm justify-center items-center">
+      <View className="w-full max-w-[90%] justify-center items-center">
         <Text className="mb-10 font-subtitle text-xl text-center">
           Faça login para não perder nenhum evento no campus IFMA Timon/MA
         </Text>
@@ -81,7 +81,7 @@ const Login = () => {
           </Text>
           <DefaultButton
             buttonText="Criar uma conta"
-            primaryButton={true}
+            primaryButton={false}
             marginVertical={0}
             buttonHandle={() => {
               navigation.navigate("Register");

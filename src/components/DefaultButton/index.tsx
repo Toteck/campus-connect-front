@@ -21,8 +21,8 @@ const DefaultButton = ({
       }}
       activeOpacity={0.85}
       style={{ marginVertical: marginVertical }}
-      className={`w-5/6 items-center p-4 justify-center mx-auto rounded-xl ${
-        primaryButton ? "bg-primaryButton" : "bg-secondaryButton"
+      className={`w-full items-center p-4 justify-center mx-auto rounded-xl ${
+        primaryButton ? "bg-primary" : "bg-secondary"
       }`}
     >
       <Text className="font-heading text-lg" style={{ color: "#fff" }}>

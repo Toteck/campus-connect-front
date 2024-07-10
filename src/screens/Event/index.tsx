@@ -52,6 +52,7 @@ const Event = () => {
         <Ionicons name="document-outline" size={32} color="green" />
         <Text>Edital PRPGI Nº 33/2023</Text>
       </TouchableOpacity>
+      
     </ScrollView>
   );
 };

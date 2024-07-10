@@ -5,8 +5,8 @@ export const colors = {
   primaryText: "#f0fdf4",
   navigationBar: "#15803D",
   bgInputDisabled: "#052E16",
-  primaryButton: "#15803D",
+  primary: "#15803D",
+  secondary: "#22c55e",
   bgInputAbled: "#fff",
   secondaryButton: "#DC2626",
-  secondary: "#22c55e",
 };
