@@ -16,13 +16,7 @@ const Navbar = () => {
       >
         <Ionicons name="home" size={32} color="white" />
       </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate("Home");
-        }}
-      >
-        <Ionicons name="menu" size={32} color="white" />
-      </TouchableOpacity>
+
       <TouchableOpacity
         onPress={() => {
           navigation.navigate("Search");
