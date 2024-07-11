@@ -28,7 +28,7 @@ const DropDownComponent = ({
         dropdownStyles={{ backgroundColor: "#fff" }}
         data={data}
         setSelected={setSelected}
-        inputStyles={{ color: "#15803D" }}
+        inputStyles={{ color: "#15803D", fontSize: 16 }}
         search={false}
       />
     </View>
