@@ -4,52 +4,61 @@ import { TextInputMask } from "react-native-masked-text";
 import DropDownComponent from "@/components/common/DropDownComponent";
 
 const Form = () => {
-
   const [select, setSelect] = useState("");
-  const Data = [{ value: "Escolha um perfil", disabled: true }];
+  const Data = [
+    { value: "Estudante" },
+    { value: "Professor" },
+    { value: "Pai, Mãe, Responsável legal pelo aluno" },
+  ];
 
-  const inputContainer =
-    "w-[90%] h-12 border-solid border border-borderColor bg-background rounded my-0 mx-auto mt-5";
-  const input = "flex-1 text-xl text-primaryText pl-2.5";
+  const inputClass = "form-input mb-5 rounded-xl";
+
   return (
-    <>
-      <View className={inputContainer}>
+    <View className=" w-full max-w-[90%]">
+      <View className="w-full ">
+        <Text className="mb-2">Nome</Text>
         <TextInput
-          placeholder="Nome e Sobrenome"
-          className={input}
-          style={{ color: "#15803D" }}
-          placeholderTextColor="#c0c0c1"
+          className={inputClass}
+          placeholder="Digite seu nome"
+          placeholderTextColor={"gray"}
         />
       </View>
-      <View className={inputContainer}>
+      <View className="w-full ">
+        <Text className="mb-2">Email</Text>
         <TextInput
-          placeholder="Email"
-          className={input}
-          style={{ color: "#15803D" }}
-          placeholderTextColor="#c0c0c1"
+          className={inputClass}
+          placeholder="Digite seu email"
+          placeholderTextColor={"gray"}
         />
       </View>
-      <DropDownComponent setSelected={setSelect} data={Data} />
+      <View className="w-full ">
+        <Text className="mb-2">Selecione seu perfil</Text>
+        <DropDownComponent
+          setSelected={setSelect}
+          data={Data}
+          placeholder="Selecione seu perfil"
+        />
+      </View>
 
-      <View className={inputContainer}>
+      <View className="w-full ">
+        <Text className="mb-2">Senha</Text>
         <TextInput
-          placeholder="Senha"
-          className={input}
-          style={{ color: "#15803D" }}
-          placeholderTextColor="#c0c0c1"
+          className={inputClass}
+          placeholder="Digite sua senha"
+          placeholderTextColor={"gray"}
           secureTextEntry
         />
       </View>
-      <View className={inputContainer}>
+      <View className="w-full">
+        <Text className="mb-2">Confirme sua senha</Text>
         <TextInput
-          placeholder="Confirmação de senha"
-          className={input}
-          style={{ color: "#15803D" }}
-          placeholderTextColor="#c0c0c1"
+          className={inputClass}
+          placeholder="Digite sua senha novamente"
+          placeholderTextColor={"gray"}
           secureTextEntry
         />
       </View>
-    </>
+    </View>
   );
 };
 

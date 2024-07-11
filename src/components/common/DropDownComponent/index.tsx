@@ -15,9 +15,13 @@ const Data = [
   },
 ];
 
-const DropDownComponent = ({ setSelected, data, placeholder }: SelectListProps) => {
+const DropDownComponent = ({
+  setSelected,
+  data,
+  placeholder,
+}: SelectListProps) => {
   return (
-    <View className="w-5/6 mx-auto rounded-xl">
+    <View className="w-full smx-auto rounded-xl mb-5">
       <SelectList
         placeholder={placeholder}
         boxStyles={{ backgroundColor: "#fff" }}

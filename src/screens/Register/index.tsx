@@ -18,39 +18,43 @@ const Register = () => {
   };
   return (
     <ScrollView
-      style={{ paddingTop: statusBarHeight }}
-      className="Container flex-1 bg-background "
+      style={{ paddingTop: statusBarHeight, paddingBottom: 40 }}
+      contentContainerStyle={{ alignItems: "center", paddingBottom: 80 }}
+      className="flex-1 bg-background"
     >
-      <BackIcon marginLeft={20} />
-      <Text className="Title text-xl text-title text-center font-bold my-[15px] mx-0">
-        CRIAR UMA CONTA
-      </Text>
+      <View className="self-start max-w-[90%] ">
+        <BackIcon marginLeft={20} />
+      </View>
+      <View className="flex-row items-center justify-center  w-full max-w-[90%] ">
+        <Text className="text-xl text-title text-center font-bold my-[15px] mx-0">
+          CRIAR UMA CONTA
+        </Text>
+      </View>
       <Form />
-      <DefaultButton
-        buttonText="FAZER REGISTRO"
-        primaryButton={true}
-        marginVertical={30}
-        buttonHandle={() => {
-          handleRegister();
-          navigation.navigate("Home");
-        }}
-      />
+      <View className="w-full max-w-[90%]">
+        <DefaultButton
+          buttonText="Cadastrar"
+          primaryButton={true}
+          marginVertical={30}
+          buttonHandle={() => {
+            handleRegister();
+          }}
+        />
+      </View>
       <Text className="text-sm text-secondaryText text-center">
         Ao fazer registro aceito{"\n"} os termos de política de privacidade
       </Text>
-      <DefaultButton
-        buttonText="FAZER LOGIN"
-        primaryButton={true}
-        marginVertical={40}
-        buttonHandle={() => {
-          navigation.navigate("Login");
-        }}
-      />
-      <Image
-        resizeMode="contain"
-        className="w-48 my-0 mx-auto mt-12"
-        source={logo}
-      />
+      <View className="w-full max-w-[90%]">
+        <DefaultButton
+          buttonText="Voltar para tela de login"
+          primaryButton={false}
+          marginVertical={30}
+          buttonHandle={() => {
+            navigation.goBack();
+          }}
+        />
+      </View>
+      <Image resizeMode="contain" className="w-48 my-0 mx-auto" source={logo} />
     </ScrollView>
   );
 };
