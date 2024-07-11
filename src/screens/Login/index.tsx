@@ -8,7 +8,7 @@ import {
   Alert,
   ScrollView,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import Constants from "expo-constants";
 import DefaultButton from "@/components/DefaultButton";
 import { useNavigation } from "@react-navigation/native";
@@ -20,6 +20,11 @@ const logo = require("../../../assets/images/logo.png");
 
 const Login = () => {
   const navigation = useNavigation<PropsStack>();
+  const [email, setEmail] = useState("");
+
+  const handleEmailChange = (text: string) => {
+    setEmail(text);
+  };
 
   const handleLogin = () => {
     Alert.alert("Botão de login");
@@ -48,8 +53,8 @@ const Login = () => {
             className="form-input mb-10 rounded-xl"
             placeholder="Email"
             placeholderTextColor={"gray"}
-            keyboardType="email-address"
-            
+            value={email}
+            onChangeText={handleEmailChange}
           />
         </View>
         <View className="w-full ">
