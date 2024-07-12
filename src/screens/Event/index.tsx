@@ -4,7 +4,6 @@ import BackIcon from "@/components/common/Backicon";
 import Constants from "expo-constants";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-
 const statusBarHeight = Constants.statusBarHeight + 15;
 const cover = require("../../../assets/images/app-icon.png");
 const Event = () => {
@@ -27,9 +26,14 @@ const Event = () => {
         />
       </View>
 
-      <TouchableOpacity className="">
-        <Ionicons name="heart-outline" size={32} color="green" />
-      </TouchableOpacity>
+      <View className="flex-row justify-between">
+        <TouchableOpacity className="">
+          <Ionicons name="heart-outline" size={32} color="green" />
+        </TouchableOpacity>
+        <TouchableOpacity className="">
+          <Ionicons name="share-social-outline" size={32} color="green" />
+        </TouchableOpacity>
+      </View>
 
       <View className=" flex-row justify-between items-center ">
         <Text className="text-xl font-heading">
@@ -52,7 +56,6 @@ const Event = () => {
         <Ionicons name="document-outline" size={32} color="green" />
         <Text>Edital PRPGI Nº 33/2023</Text>
       </TouchableOpacity>
-      
     </ScrollView>
   );
 };

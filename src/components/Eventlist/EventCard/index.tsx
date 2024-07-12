@@ -17,7 +17,7 @@ const EventCard = ({ data }: DataProps) => {
     <TouchableOpacity
       activeOpacity={0.85}
       onPress={() => {
-        navigation.navigate("Event")
+        navigation.navigate("Event");
       }}
       className="h-[550px] justify-between  mx-7 bg-white rounded-2xl p-3 shadow-card border border-gray-300 "
     >

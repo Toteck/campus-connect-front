@@ -7,6 +7,7 @@ import Login from "@/screens/Login";
 import Register from "@/screens/Register";
 import Search from "../screens/Search";
 import Event from "@/screens/Event";
+import MyEvents from "@/screens/MyEvents";
 
 //const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ type PropsNavigationStack = {
   Register: undefined;
   Search: undefined;
   Event: undefined;
+  MyEvents: undefined;
 };
 
 const Stack = createNativeStackNavigator<PropsNavigationStack>();
@@ -34,6 +36,7 @@ const Routes = () => {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Search" component={Search} />
         <Stack.Screen name="Event" component={Event} />
+        <Stack.Screen name="MyEvents" component={MyEvents} />
       </Stack.Navigator>
     </NavigationContainer>
   );

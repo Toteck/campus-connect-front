@@ -26,10 +26,10 @@ const Navbar = () => {
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Home");
+          navigation.navigate("MyEvents");
         }}
       >
-        <Ionicons name="star" size={32} color="white" />
+        <Ionicons name="star-outline" size={32} color="white" />
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
