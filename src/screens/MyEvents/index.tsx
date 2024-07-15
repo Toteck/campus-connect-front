@@ -13,6 +13,7 @@ import Constants from "expo-constants";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import EventCard from "@/components/MyEvents/EventsCard";
 import { EventType } from "@/components/Eventlist";
+import Navbar from "@/components/common/Navbar";
 
 const statusBarHeight = Constants.statusBarHeight + 15;
 const cover = require("../../../assets/images/app-icon.png");
@@ -105,7 +106,9 @@ const MyEvents = () => {
         style={{ paddingTop: statusBarHeight, paddingHorizontal: 20 }}
       >
         <BackIcon marginLeft={0} />
-        <Text className="text-2xl ml-28">Meus eventos</Text>
+        <Text className="text-2xl font-semibold ml-28 text-green-900">
+          Meus eventos
+        </Text>
       </View>
       <FlatList
         data={Data}
@@ -119,6 +122,7 @@ const MyEvents = () => {
         }}
         ItemSeparatorComponent={ItemSeparator}
       />
+      <Navbar />
     </View>
   );
 };
