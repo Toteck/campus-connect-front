@@ -17,6 +17,7 @@ const BackIcon = ({ marginLeft }: props) => {
       onPress={() => {
         navigation.goBack();
       }}
+      className=""
     >
       <Ionicons
         style={{ marginLeft: marginLeft }}
