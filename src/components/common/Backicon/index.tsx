@@ -4,8 +4,6 @@ import { useNavigation } from "@react-navigation/native";
 import { PropsStack } from "@/routes";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-const back = require("../../../../assets/icons/back-arrow.png");
-
 type props = {
   marginLeft: number;
 };
@@ -17,7 +15,6 @@ const BackIcon = ({ marginLeft }: props) => {
       onPress={() => {
         navigation.goBack();
       }}
-      className=""
     >
       <Ionicons
         style={{ marginLeft: marginLeft }}

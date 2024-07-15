@@ -1,25 +1,31 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TouchableOpacityProps,
-  StyleSheet,
-} from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import React from "react";
 
 type props = {
   buttonText: string;
-  primaryButton: boolean;
   marginVertical: number;
   buttonHandle: Function;
+  typeButtonColor?: string;
 };
 
 const DefaultButton = ({
   buttonText,
-  primaryButton,
   marginVertical,
   buttonHandle,
+  typeButtonColor = "primary",
 }: props) => {
+  let styleClass = "";
+
+  if (typeButtonColor === "primary") {
+    styleClass =
+      "w-full items-center p-4 justify-center mx-auto rounded-xl bg-primary";
+  } else if (typeButtonColor === "secondary") {
+    styleClass =
+      "w-full items-center p-4 justify-center mx-auto rounded-xl bg-secondary";
+  } else if (typeButtonColor === "tertiary") {
+    styleClass =
+      "w-full items-center p-4 justify-center mx-auto rounded-xl border border-green-700 bg-transparent";
+  }
   return (
     <TouchableOpacity
       onPress={() => {
@@ -27,11 +33,12 @@ const DefaultButton = ({
       }}
       activeOpacity={0.85}
       style={{ marginVertical: marginVertical }}
-      className={`w-full items-center p-4 justify-center mx-auto rounded-xl ${
-        primaryButton ? "bg-primary" : "bg-secondary"
-      }`}
+      className={styleClass}
     >
-      <Text className="font-heading text-lg" style={{ color: "#fff" }}>
+      <Text
+        className="font-heading text-lg"
+        style={{ color: typeButtonColor === "tertiary" ? "#052E16" : "#fff" }}
+      >
         {buttonText}
       </Text>
     </TouchableOpacity>

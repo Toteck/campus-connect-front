@@ -12,9 +12,16 @@ interface InputProps {
   value: string;
   abled: boolean;
   handleInput: () => void;
+  placeholder: string;
 }
 
-const InputText = ({ label, value, handleInput, abled }: InputProps) => {
+const InputText = ({
+  label,
+  value,
+  handleInput,
+  abled,
+  placeholder,
+}: InputProps) => {
   const style = abled
     ? "form-input mb-10 rounded-xl"
     : "form-input bg-green-800 mb-10 rounded-xl";
@@ -25,8 +32,8 @@ const InputText = ({ label, value, handleInput, abled }: InputProps) => {
         <TextInput
           className={style}
           style={{ color: abled ? "gray" : "white" }}
-          placeholder="Email"
-          placeholderTextColor={"white"}
+          placeholder={placeholder}
+          placeholderTextColor={"gray"}
           value={value}
           showSoftInputOnFocus={abled}
           onChangeText={handleInput}
