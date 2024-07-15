@@ -19,6 +19,7 @@ const Register = () => {
   return (
     <ScrollView
       style={{ paddingTop: statusBarHeight, paddingBottom: 40 }}
+      showsVerticalScrollIndicator={false}
       contentContainerStyle={{ alignItems: "center", paddingBottom: 80 }}
       className="flex-1 bg-background"
     >
