@@ -7,6 +7,7 @@ import Navbar from "@/components/common/Navbar";
 import DefaultTitle from "@/components/common/DefaultTitle";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { PropsNavigationStack } from "@/routes";
+import getDate from "@/utils/getDate";
 
 const statusBarHeight = Constants.statusBarHeight + 15;
 const cover = require("../../../assets/images/app-icon.png");
@@ -30,7 +31,9 @@ const Event = ({ route }: Props) => {
         <DefaultTitle title={params.event_type} />
 
         <View className="w-[90%] space-y-8 mt-4">
-          <Text className="text-gray-700">{params.created_at}</Text>
+          <Text className="text-gray-700 mb-2">
+            Publicado em: {getDate(params.created_at)}
+          </Text>
           <View className="border border-gray-400 w-full items-center rounded-md bg-green-50">
             <Image
               source={cover}
