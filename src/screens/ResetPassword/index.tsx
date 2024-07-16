@@ -20,7 +20,7 @@ const ResetPassword = () => {
       className="flex-1 bg-background items-center"
     >
       <DefaultTitle title={"Resetar senha"} />
-      <View className="w-[90%] h-auto justify-between items-center border border-red-500 my-10">
+      <View className="w-[90%] h-auto justify-between items-center my-10">
         <Text className="text-center text-xl font-semibold mb-5">
           Digite sua nova senha nos campos abaixo!
         </Text>
@@ -47,10 +47,10 @@ const ResetPassword = () => {
           buttonHandle={handleResetPassword}
         />
         <DefaultButton
-          buttonText={"Voltar"}
+          buttonText={"Login"}
           marginVertical={0}
           buttonHandle={() => {
-            navigation.goBack();
+            navigation.navigate("Login");
           }}
           typeButtonColor="tertiary"
         />
