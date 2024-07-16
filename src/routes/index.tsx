@@ -10,6 +10,7 @@ import Event from "@/screens/Event";
 import MyEvents from "@/screens/MyEvents";
 import Profile from "@/screens/Profile";
 import ForgotPassword from "@/screens/ForgotPassword";
+import ResetPassword from "@/screens/ResetPassword";
 
 type PropsNavigationStack = {
   Home: undefined;
@@ -20,6 +21,7 @@ type PropsNavigationStack = {
   MyEvents: undefined;
   Profile: undefined;
   ForgotPassword: undefined;
+  ResetPassword: undefined;
 };
 
 const Stack = createNativeStackNavigator<PropsNavigationStack>();
@@ -31,7 +33,7 @@ const Routes = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName="Login"
+        initialRouteName="ResetPassword"
       >
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
@@ -41,6 +43,7 @@ const Routes = () => {
         <Stack.Screen name="MyEvents" component={MyEvents} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+        <Stack.Screen name="ResetPassword" component={ResetPassword} />
       </Stack.Navigator>
     </NavigationContainer>
   );
