@@ -9,8 +9,7 @@ import Search from "../screens/Search";
 import Event from "@/screens/Event";
 import MyEvents from "@/screens/MyEvents";
 import Profile from "@/screens/Profile";
-
-//const Stack = createNativeStackNavigator();
+import ForgotPassword from "@/screens/ForgotPassword";
 
 type PropsNavigationStack = {
   Home: undefined;
@@ -20,6 +19,7 @@ type PropsNavigationStack = {
   Event: undefined;
   MyEvents: undefined;
   Profile: undefined;
+  ForgotPassword: undefined;
 };
 
 const Stack = createNativeStackNavigator<PropsNavigationStack>();
@@ -40,6 +40,7 @@ const Routes = () => {
         <Stack.Screen name="Event" component={Event} />
         <Stack.Screen name="MyEvents" component={MyEvents} />
         <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       </Stack.Navigator>
     </NavigationContainer>
   );

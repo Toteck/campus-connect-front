@@ -5,13 +5,13 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 interface InputProps {
   label: string;
   value: string;
   abled: boolean;
-  handleInput: () => void;
+  handleInput: Dispatch<SetStateAction<string>>;
   placeholder: string;
 }
 
@@ -31,9 +31,9 @@ const InputText = ({
       <View>
         <TextInput
           className={style}
-          style={{ color: abled ? "gray" : "white" }}
+          style={{ color: abled ? "#15803D" : "#fff" }}
           placeholder={placeholder}
-          placeholderTextColor={"gray"}
+          placeholderTextColor={"#aaa"}
           value={value}
           showSoftInputOnFocus={abled}
           onChangeText={handleInput}

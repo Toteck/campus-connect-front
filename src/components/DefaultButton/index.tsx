@@ -18,13 +18,13 @@ const DefaultButton = ({
 
   if (typeButtonColor === "primary") {
     styleClass =
-      "w-full items-center p-4 justify-center mx-auto rounded-xl bg-primary";
+      "w-full items-center p-4 justify-center mx-auto rounded-xl bg-primary mb-4";
   } else if (typeButtonColor === "secondary") {
     styleClass =
-      "w-full items-center p-4 justify-center mx-auto rounded-xl bg-secondary";
+      "w-full items-center p-4 justify-center mx-auto rounded-xl bg-secondary mb-4";
   } else if (typeButtonColor === "tertiary") {
     styleClass =
-      "w-full items-center p-4 justify-center mx-auto rounded-xl border border-green-700 bg-transparent";
+      "w-full items-center p-4 justify-center mx-auto rounded-xl border border-green-700 bg-transparent mb-4";
   }
   return (
     <TouchableOpacity

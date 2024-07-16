@@ -69,7 +69,6 @@ const Login = () => {
 
         <DefaultButton
           buttonText="Fazer login"
-          primaryButton={true}
           marginVertical={30}
           buttonHandle={() => {
             handleLogin();
@@ -78,11 +77,12 @@ const Login = () => {
         <View className="">
           <Text
             onPress={() => {
-              Alert.alert("Vai para tela de esqueceu senha!");
+              navigation.navigate("ForgotPassword");
             }}
             className="text-lg font-subtitle mb-4"
           >
-            Esqueceu sua senha? Clique aqui!
+            Esqueceu sua senha?{" "}
+            <Text className="text-secondary">Clique aqui!</Text>
           </Text>
         </View>
         <View className="w-full flex justify-center items-center">
@@ -91,7 +91,6 @@ const Login = () => {
           </Text>
           <DefaultButton
             buttonText="Criar uma conta"
-            primaryButton={false}
             marginVertical={0}
             buttonHandle={() => {
               navigation.navigate("Register");
