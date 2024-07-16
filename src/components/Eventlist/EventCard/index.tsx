@@ -4,9 +4,10 @@ import { EventType } from "..";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import { PropsStack } from "@/routes";
+import { Event } from "@/entities/Event";
 
 interface DataProps {
-  data: EventType;
+  data: Event;
 }
 
 const cover = require("../../../../assets/images/app-icon.png");
@@ -17,7 +18,9 @@ const EventCard = ({ data }: DataProps) => {
     <TouchableOpacity
       activeOpacity={0.85}
       onPress={() => {
-        navigation.navigate("Event");
+        navigation.navigate("Event", {
+          ...data,
+        });
       }}
       className="h-[550px] justify-between  mx-7 bg-white rounded-2xl p-3 shadow-card border border-gray-300 "
     >

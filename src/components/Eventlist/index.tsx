@@ -8,8 +8,8 @@ import {
   Alert,
 } from "react-native";
 import React from "react";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import EventCard from "./EventCard";
+import { Event } from "@/entities/Event";
 
 const cover = require("../../../assets/images/app-icon.png");
 export interface EventType {
@@ -92,13 +92,14 @@ const Data = [
 ];
 
 const Eventlist = () => {
-  const Item = ({ data }: { data: EventType }) => (
-    <EventCard data={data}/>
+  const renderItem: ListRenderItem<Event> = ({ item }) => (
+    <EventCard data={item} />
   );
+  // const Item = ({ data }: { data: EventType }) => <EventCard data={data} />;
 
-  const renderItem: ListRenderItem<EventType> = ({ item }) => (
-    <Item data={item} />
-  );
+  // const renderItem: ListRenderItem<EventType> = ({ item }) => (
+  //   <Item data={item} />
+  // );
 
   const ItemSeparator = () => (
     <View style={{ height: 16 }} /> // Espaço entre os itens
@@ -107,7 +108,7 @@ const Eventlist = () => {
   return (
     <FlatList
       data={Data}
-      keyExtractor={(item: EventType) => item.id}
+      keyExtractor={(item: Event) => item.id}
       renderItem={renderItem}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{

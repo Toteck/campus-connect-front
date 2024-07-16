@@ -35,7 +35,6 @@ const Register = () => {
       <View className="w-full max-w-[90%]">
         <DefaultButton
           buttonText="Cadastrar"
-          primaryButton={true}
           marginVertical={30}
           buttonHandle={() => {
             handleRegister();
@@ -48,7 +47,6 @@ const Register = () => {
       <View className="w-full max-w-[90%]">
         <DefaultButton
           buttonText="Voltar para tela de login"
-          primaryButton={false}
           marginVertical={30}
           buttonHandle={() => {
             navigation.goBack();
