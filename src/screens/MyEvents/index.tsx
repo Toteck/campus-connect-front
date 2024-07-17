@@ -10,10 +10,10 @@ import {
 import React from "react";
 import BackIcon from "@/components/common/Backicon";
 import Constants from "expo-constants";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import EventCard from "@/components/MyEvents/EventsCard";
 import { EventType } from "@/components/Eventlist";
 import Navbar from "@/components/common/Navbar";
+import { Event } from "@/entities/Event";
 
 const statusBarHeight = Constants.statusBarHeight + 15;
 const cover = require("../../../assets/images/app-icon.png");
@@ -92,10 +92,8 @@ const Data = [
 ];
 
 const MyEvents = () => {
-  const Item = ({ data }: { data: EventType }) => <EventCard data={data} />;
-  const renderItem: ListRenderItem<EventType> = ({ item }) => (
-    <Item data={item} />
-  );
+  const Item = ({ data }: { data: Event }) => <EventCard data={data} />;
+  const renderItem: ListRenderItem<Event> = ({ item }) => <Item data={item} />;
   const ItemSeparator = () => (
     <View style={{ height: 16 }} /> // Espaço entre os itens
   );
@@ -117,7 +115,7 @@ const MyEvents = () => {
         className="w-full"
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
-          paddingBottom: 80,
+          paddingBottom: 100,
           alignItems: "center",
         }}
         ItemSeparatorComponent={ItemSeparator}
