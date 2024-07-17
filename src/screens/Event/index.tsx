@@ -1,6 +1,5 @@
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
-import BackIcon from "@/components/common/Backicon";
 import Constants from "expo-constants";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Navbar from "@/components/common/Navbar";
