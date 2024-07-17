@@ -1,22 +1,9 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  ListRenderItem,
-  FlatList,
-  Alert,
-} from "react-native";
+import { View, ListRenderItem, FlatList } from "react-native";
 import React from "react";
 import EventCard from "./EventCard";
 import { Event } from "@/entities/Event";
 
 const cover = require("../../../assets/images/app-icon.png");
-export interface EventType {
-  id: string;
-  title: string;
-  description: string;
-}
 
 const Data = [
   {
@@ -95,11 +82,6 @@ const Eventlist = () => {
   const renderItem: ListRenderItem<Event> = ({ item }) => (
     <EventCard data={item} />
   );
-  // const Item = ({ data }: { data: EventType }) => <EventCard data={data} />;
-
-  // const renderItem: ListRenderItem<EventType> = ({ item }) => (
-  //   <Item data={item} />
-  // );
 
   const ItemSeparator = () => (
     <View style={{ height: 16 }} /> // Espaço entre os itens

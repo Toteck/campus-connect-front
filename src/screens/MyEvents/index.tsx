@@ -11,7 +11,6 @@ import React from "react";
 import BackIcon from "@/components/common/Backicon";
 import Constants from "expo-constants";
 import EventCard from "@/components/MyEvents/EventsCard";
-import { EventType } from "@/components/Eventlist";
 import Navbar from "@/components/common/Navbar";
 import { Event } from "@/entities/Event";
 
@@ -110,7 +109,7 @@ const MyEvents = () => {
       </View>
       <FlatList
         data={Data}
-        keyExtractor={(item: EventType) => item.id}
+        keyExtractor={(item: Event) => item.id}
         renderItem={renderItem}
         className="w-full"
         showsVerticalScrollIndicator={false}

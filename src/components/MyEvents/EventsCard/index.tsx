@@ -1,6 +1,5 @@
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import React from "react";
-import { EventType } from "@/components/Eventlist";
 import { Event } from "@/entities/Event";
 import { useNavigation } from "@react-navigation/native";
 import { PropsStack } from "@/routes";
