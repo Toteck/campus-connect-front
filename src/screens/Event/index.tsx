@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-  Alert,
-} from "react-native";
+import { View, ScrollView, Alert, Share } from "react-native";
 import React from "react";
 import Constants from "expo-constants";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -18,6 +11,7 @@ import EventHeader from "@/components/Event/EventHeader";
 import EventImage from "@/components/Event/EventImage";
 import EventAction from "@/components/Event/EventAction";
 import EventDetails from "@/components/Event/EventDetails";
+import getDate from "@/utils/getDate";
 
 const statusBarHeight = Constants.statusBarHeight + 15;
 const cover = require("../../../assets/images/app-icon.png");
@@ -26,7 +20,28 @@ type Props = NativeStackScreenProps<PropsNavigationStack, "Event">;
 
 const Event = ({ route }: Props) => {
   const { params } = route;
-  console.log({ params });
+
+  const handleShare = async () => {
+    try {
+      const result = await Share.share({
+        message: `Confira este evento: ${params.title}\n\n${
+          params.description
+        }\n\nPublicado em: ${getDate(params.created_at)}`,
+      });
+
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          console.log("Compartilhado com sucesso");
+        } else {
+          console.log("Conteúdo compartilhado");
+        }
+      } else if (result.action === Share.dismissedAction) {
+        console.log("Compartilhamento cancelado");
+      }
+    } catch (error) {
+      Alert.alert("Erro ao compartilhar", error.message);
+    }
+  };
   return (
     <>
       <ScrollView
@@ -52,7 +67,7 @@ const Event = ({ route }: Props) => {
             >
               <Ionicons name="heart-outline" size={32} color="#2F855A" />
             </EventAction>
-            <EventAction onPress={() => {}}>
+            <EventAction onPress={handleShare}>
               <Ionicons name="share-social-outline" size={32} color="#2F855A" />
             </EventAction>
           </View>
