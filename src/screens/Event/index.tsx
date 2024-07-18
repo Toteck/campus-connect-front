@@ -8,10 +8,11 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { PropsNavigationStack } from "@/routes";
 
 import EventHeader from "@/components/Event/EventHeader";
-import EventImage from "@/components/Event/EventImage";
+
 import EventAction from "@/components/Event/EventAction";
 import EventDetails from "@/components/Event/EventDetails";
 import getDate from "@/utils/getDate";
+import EventImage from "@/components/Event/EventImage";
 
 const statusBarHeight = Constants.statusBarHeight + 15;
 const cover = require("../../../assets/images/app-icon.png");

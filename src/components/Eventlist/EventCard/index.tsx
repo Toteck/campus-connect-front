@@ -1,6 +1,5 @@
 import { View, Text, Image, TouchableOpacity, Alert } from "react-native";
 import React from "react";
-import { EventType } from "..";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import { PropsStack } from "@/routes";

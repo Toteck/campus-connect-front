@@ -5,10 +5,13 @@ import Navbar from "@/components/common/Navbar";
 import Form from "@/components/Profile/Form";
 import DefaultTitle from "@/components/common/DefaultTitle";
 import DefaultButton from "@/components/DefaultButton";
+import { useNavigation } from "@react-navigation/native";
+import { PropsStack } from "@/routes";
 
 const statusBarHeight = Constants.statusBarHeight + 15;
 
 const Profile = () => {
+  const navigation = useNavigation<PropsStack>();
   return (
     <>
       <ScrollView
@@ -27,7 +30,9 @@ const Profile = () => {
           <DefaultButton
             buttonText={"Eventos salvos"}
             marginVertical={10}
-            buttonHandle={() => {}}
+            buttonHandle={() => {
+              navigation.navigate("Favorites");
+            }}
             typeButtonColor="tertiary"
           />
           <DefaultButton
