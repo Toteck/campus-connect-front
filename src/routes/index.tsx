@@ -11,6 +11,7 @@ import MyEvents from "@/screens/MyEvents";
 import Profile from "@/screens/Profile";
 import ForgotPassword from "@/screens/ForgotPassword";
 import ResetPassword from "@/screens/ResetPassword";
+import Favorites from "@/screens/Favorites";
 import { Event } from "@/entities/Event";
 
 export type PropsNavigationStack = {
@@ -23,6 +24,7 @@ export type PropsNavigationStack = {
   Profile: undefined;
   ForgotPassword: undefined;
   ResetPassword: undefined;
+  Favorites: undefined;
 };
 
 const Stack = createNativeStackNavigator<PropsNavigationStack>();
@@ -45,6 +47,7 @@ const Routes = () => {
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="ResetPassword" component={ResetPassword} />
+        <Stack.Screen name="Favorites" component={Favorites} />
       </Stack.Navigator>
     </NavigationContainer>
   );
