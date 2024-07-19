@@ -12,7 +12,7 @@ const EmptyView = () => {
 
 const DefaultTitle = ({ title }: DefaultTitleProps) => {
   return (
-    <View className="w-[90%] flex-row items-center justify-between my-0 mx-5">
+    <View className="w-[90%] flex-row items-center justify-between mb-2 mx-5">
       <BackIcon marginLeft={0} />
       <Text className="text-2xl font-semibold text-green-900">{title}</Text>
       <EmptyView />

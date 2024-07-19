@@ -3,12 +3,13 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { PropsStack } from "@/routes";
 import { Event } from "@/entities/Event";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { Alert } from "react-native";
+
 interface DataProps {
   data: Event;
 }
+
 const logo = require("../../../../assets/images/logo.png");
+
 const FavoriteCard = ({ data }: DataProps) => {
   const navigation = useNavigation<PropsStack>();
 
@@ -23,7 +24,7 @@ const FavoriteCard = ({ data }: DataProps) => {
       }}
     >
       {logo ? (
-        <Image source={logo} style={styles.image} />
+        <Image source={logo} className="w-auto h-36 container" />
       ) : (
         <View style={styles.imageFallback}>
           <Text style={styles.imageFallbackText}>
@@ -31,14 +32,6 @@ const FavoriteCard = ({ data }: DataProps) => {
           </Text>
         </View>
       )}
-      <TouchableOpacity
-        activeOpacity={0.85}
-        onPress={() => {
-          Alert.alert("Você descurtiu o post");
-        }}
-      >
-        <Ionicons className="pl-4" name="heart" size={30} color="green" />
-      </TouchableOpacity>
 
       <View style={styles.content}>
         <Text style={styles.title}>{data.title}</Text>
@@ -52,7 +45,6 @@ const FavoriteCard = ({ data }: DataProps) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: "90%",
     backgroundColor: "#fff",
     borderRadius: 10,
     overflow: "hidden",
@@ -65,15 +57,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 6,
     elevation: 14,
-    justifyContent: "space-between",
+    width: 375, // Ajuste a largura dos cards
   },
   image: {
-    width: "auto",
+    width: "100%",
     height: 150,
     resizeMode: "cover",
   },
   imageFallback: {
-    width: "auto",
+    width: "100%",
     height: 150,
     backgroundColor: "#d3d3d3",
     justifyContent: "center",

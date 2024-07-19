@@ -81,10 +81,6 @@ const FavoritesList = () => {
     <FavoriteCard data={item} />
   );
 
-  const ItemSeparator = () => (
-    <View style={{ height: 16 }} /> // Espaço entre os itens
-  );
-
   return (
     <FlatList
       data={Data}
@@ -95,7 +91,6 @@ const FavoritesList = () => {
         paddingBottom: 80,
         alignItems: "center",
       }}
-      ItemSeparatorComponent={ItemSeparator}
     />
   );
 };
