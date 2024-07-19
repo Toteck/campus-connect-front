@@ -7,10 +7,14 @@ import Header from "@/components/common/Header";
 import DropDownComponent from "@/components/common/DropDownComponent";
 import DefaultButton from "@/components/DefaultButton";
 import { SearchInput } from "./style";
+import { useNavigation } from "@react-navigation/native";
+import { PropsStack } from "@/routes";
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState("");
   const [select, setSelect] = useState("");
+
+  const navigation = useNavigation<PropsStack>();
 
   const eventType = [
     { value: "Notícia" },
@@ -43,15 +47,13 @@ const Search = () => {
           label="Selecione seu perfil"
         />
 
-        <View className="w-full">
-          <DefaultButton
-            buttonText={"Buscar evento"}
-            marginVertical={0}
-            buttonHandle={() => {
-              Alert.alert("Filtro aplicado a pesquisa");
-            }}
-          />
-        </View>
+        <DefaultButton
+          buttonText={"Buscar evento"}
+          marginVertical={0}
+          buttonHandle={() => {
+            navigation.navigate("ResultSearch");
+          }}
+        />
       </View>
 
       <Navbar />

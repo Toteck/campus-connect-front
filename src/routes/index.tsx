@@ -13,12 +13,14 @@ import ForgotPassword from "@/screens/ForgotPassword";
 import ResetPassword from "@/screens/ResetPassword";
 import Favorites from "@/screens/Favorites";
 import { Event } from "@/entities/Event";
+import ResultSearch from "@/screens/ResultSearch";
 
 export type PropsNavigationStack = {
   Home: undefined;
   Login: undefined;
   Register: undefined;
   Search: undefined;
+  ResultSearch: undefined;
   Event: Event;
   MyEvents: undefined;
   Profile: undefined;
@@ -42,6 +44,7 @@ const Routes = () => {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Search" component={Search} />
+        <Stack.Screen name="ResultSearch" component={ResultSearch} />
         <Stack.Screen name="Event" component={EventScreen} />
         <Stack.Screen name="MyEvents" component={MyEvents} />
         <Stack.Screen name="Profile" component={Profile} />
