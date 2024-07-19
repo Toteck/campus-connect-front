@@ -38,7 +38,9 @@ const Profile = () => {
           <DefaultButton
             buttonText={"Sair da conta"}
             marginVertical={10}
-            buttonHandle={() => {}}
+            buttonHandle={() => {
+              navigation.navigate("Login");
+            }}
           />
         </View>
       </ScrollView>
