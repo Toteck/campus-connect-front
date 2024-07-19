@@ -54,7 +54,12 @@ const Event = ({ route }: Props) => {
           paddingBottom: 150,
         }}
       >
-        <DefaultTitle title={params.event_type} />
+        <DefaultTitle
+          title={
+            params.event_type.charAt(0).toUpperCase() +
+            params.event_type.slice(1)
+          }
+        />
 
         <View className="w-[90%] space-y-8 mt-4">
           <EventHeader publishedData={params.created_at} />
