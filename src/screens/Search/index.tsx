@@ -6,6 +6,7 @@ import Navbar from "@/components/common/Navbar";
 import Header from "@/components/common/Header";
 import DropDownComponent from "@/components/common/DropDownComponent";
 import DefaultButton from "@/components/DefaultButton";
+import { SearchInput } from "./style";
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -23,37 +24,28 @@ const Search = () => {
   ];
 
   return (
-    <View className="flex-1 bg-background w-full items-center">
+    <View className="flex-1 bg-background w-full items-center container">
       <Header />
-      <View className="w-full max-w-[90%] h-1/2 gap-y-10 items-center">
-        <View className="flex-row w-full justify-between items-center bg-white p-2.5 pr-10 rounded-xl border">
-          <TextInput
-            className="w-full text-base"
-            placeholder="Busque por um evento"
-            onChangeText={(value) => setSearchValue(value)}
-          />
-          <Ionicons name="search" size={20} color="#15803D" />
-        </View>
-        <View className="w-full">
-          <Text className="mb-2">Selecione seu perfil</Text>
-          <DropDownComponent
-            setSelected={setSelect}
-            data={eventType}
-            placeholder="Selecione o tipo de evento"
-          />
-        </View>
-        <View className="w-full justify-between">
-          <Text className="mb-2">Selecione seu perfil</Text>
-          <DropDownComponent
-            placeholder="Escolha um tipo de público"
-            setSelected={setSelect}
-            data={publicType}
-          />
-        </View>
+      <View className="w-[90%] gap-y-10">
+        <SearchInput onChangeText={setSearchValue} />
+
+        <DropDownComponent
+          setSelected={setSelect}
+          data={eventType}
+          placeholder="Selecione o tipo de evento"
+          label="Selecione o tipo de evento"
+        />
+
+        <DropDownComponent
+          placeholder="Escolha um tipo de público"
+          setSelected={setSelect}
+          data={publicType}
+          label="Selecione seu perfil"
+        />
+
         <View className="w-full">
           <DefaultButton
             buttonText={"Buscar evento"}
-            primaryButton={true}
             marginVertical={0}
             buttonHandle={() => {
               Alert.alert("Filtro aplicado a pesquisa");

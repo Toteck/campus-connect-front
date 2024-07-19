@@ -18,6 +18,7 @@ const Data = [
 
 interface DropDownComponentProps extends SelectListProps {
   enabled?: boolean;
+  label?: string;
 }
 
 const DropDownComponent = ({
@@ -25,6 +26,7 @@ const DropDownComponent = ({
   data,
   placeholder,
   enabled = true,
+  label,
 }: DropDownComponentProps) => {
   const boxStyles = enabled
     ? { backgroundColor: "#fff" }
@@ -37,16 +39,19 @@ const DropDownComponent = ({
     : { color: "#fff", fontSize: 16 };
   const dataset = enabled ? data : [];
   return (
-    <View className="w-full smx-auto rounded-xl mb-10">
-      <SelectList
-        placeholder={placeholder}
-        boxStyles={boxStyles}
-        dropdownStyles={dropdownStyles}
-        data={dataset}
-        setSelected={enabled ? setSelected : () => {}}
-        inputStyles={inputStyles}
-        search={false}
-      />
+    <View>
+      <Text className="mb-1">{label}</Text>
+      <View className="w-full smx-auto rounded-xl">
+        <SelectList
+          placeholder={placeholder}
+          boxStyles={boxStyles}
+          dropdownStyles={dropdownStyles}
+          data={dataset}
+          setSelected={enabled ? setSelected : () => {}}
+          inputStyles={inputStyles}
+          search={false}
+        />
+      </View>
     </View>
   );
 };
